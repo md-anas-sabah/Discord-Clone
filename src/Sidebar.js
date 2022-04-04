@@ -6,6 +6,10 @@ import SidebarChannel from "./SidebarChannel";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CallIcon from "@mui/icons-material/Call";
+import { Avatar } from "@mui/material";
+import MicIcon from "@mui/icons-material/Mic";
+import HeadsetIcon from "@mui/icons-material/Headset";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 function Sidebar() {
   return (
@@ -44,6 +48,20 @@ function Sidebar() {
         <div className="sidebar__voiceIcons">
           <InfoOutlinedIcon />
           <CallIcon />
+        </div>
+      </div>
+
+      <div className="sidebar__profile">
+        <Avatar src="https://www.facebook.com/photo?fbid=473075934158528&set=a.154067452726046" />
+        <div className="sidebar__profileInfo">
+          <h3>@Md Anas Sabah</h3>
+          <p>#3102</p>
+        </div>
+
+        <div className="sidebar__profileIcons">
+          <MicIcon />
+          <HeadsetIcon />
+          <SettingsIcon />
         </div>
       </div>
     </div>
