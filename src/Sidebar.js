@@ -10,8 +10,12 @@ import { Avatar } from "@mui/material";
 import MicIcon from "@mui/icons-material/Mic";
 import HeadsetIcon from "@mui/icons-material/Headset";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
+import { auth } from "./firebase";
 
 function Sidebar() {
+  const user = useSelector(selectUser);
   return (
     <div className="sidebar">
       <div className="sidebar__top">
@@ -52,7 +56,12 @@ function Sidebar() {
       </div>
 
       <div className="sidebar__profile">
-        <Avatar src="https://www.facebook.com/photo?fbid=473075934158528&set=a.154067452726046" />
+        <Avatar
+          onClick={() => {
+            auth.signOut();
+          }}
+          src={user.photo}
+        />
         <div className="sidebar__profileInfo">
           <h3>@Md Anas Sabah</h3>
           <p>#3102</p>
